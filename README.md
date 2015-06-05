@@ -1,5 +1,5 @@
 # Creative Installer
-Creative Installer is a cooperative project to act as a replacement for Adobe's now discontinued Extension Manager.
+Creative Installer is a cooperative project to act as a replacement for Adobe's Extension Manager.
 
 ##Project Objectives
 * Offer a easy way for developers to deploy scripts, extensions and plugins for their end users.
