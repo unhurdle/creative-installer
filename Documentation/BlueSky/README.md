@@ -8,11 +8,13 @@ However, the basic ingredients are always pretty much the same; it's just that s
 
 It does not matter what technology the installer is implemented with, a number of basic things need to be covered, no matter what the technology used.
 
-Our 'TextExporter' plug-in has installers for Mac and Windows, and I find that maintaining it is a major pain in the behind: updates are far between, and the folders are littered with little readme files to help remind me of all kinds of hairy details that I need to remember to successfully rebuild the installer. There must be a better way. 
+Our 'TextExporter' plug-in has installers for Mac and Windows, and I find that maintaining it is a major pain in the behind. I only release updates rarely, and the build folders are littered with little readme files to help remind me of all kinds of hairy details that I need to remember to successfully rebuild the installer. I always lose a day just getting back 'into' the right thinking when I need to build an update. There must be a better way. 
 
-My current thinking is that I would like to write a cross-platform replacement for extension manager in Xojo, something that's easy to 'feed'.
+My current vague thinking is that I would like to write a cross-platform replacement for extension manager in Xojo, something that's easy to 'feed'. I want to install plug-ins, .spln files, extensions,... just like Extension Manager. Initially, I'd aim for something that's compatible, and can digest .zxp files. 
 
-Such a tool would not be the end-all for everyone - it's just what I currently think I want/need. But in the process, I need to discover lots of information that would be useful for anyone going through a similar process, so I am 'thinking out loud' and putting whatever I find or think here. Don't take any of what you read here as 'gospel' - it's more like the incoherent thoughts of a scatterbrain.
+I'd love some bells, or rather - removing some bells. E.g. I want my replacement to be able to install without the 'signing' and 'timestamping' etc... and leave it up to the user whether they want or don't want super-security. If everything else is insecure, having a super-secure ZXP installer kind of defeats the purpose. I think of it as a massive, triple-locked steel door mounted in the doorway of a straw hut on some steppe somewhere. 
+
+Such a tool would not be the end-all for everyone - it's just what I currently think I want/need. But in the process, I need to discover lots of information that would be useful for anyone going through a similar process, so I am 'thinking out loud' and putting whatever I find or think here. Don't take any of what you read here as 'gospel' - it's more like the incoherent thoughts of a scatterbrain. And I might scrap things a few times and start over.
 
 # Aspects
 
@@ -67,6 +69,26 @@ large and will be moved to a subfolder/subdocument.
 
     * Windows
 
+        Inno Setup
+
+            http://www.jrsoftware.org/isinfo.php
+
         Advanced Installer
 
             http://www.advancedinstaller.com/
+
+* Versions
+    
+    We need to keep versions in mind. I can envision wanting to install stuff into just a single version of, say, InDesign, or, when applicable/possible/... into all versions, select versions
+
+* Non-standard folder locations
+
+    I have no idea how often people have stuff installed into non-standard locations. Depending on the situation, it might be OK to simply ignore that (if 99.9% of your customers have stuff in a standard location, and it's a low-cost tool. You simply tell the 'non-standard' ones: "Don't Do That"). Or it might be very important (if one of your large customers has 10,000 workstations with stuff installed in a weird location). 
+
+* Locale/Internationalization
+
+    Depending on your market, localization can be unimportant or very important. In my case, the German market is non-negligible and generally speaking they seem to appreciate German-language versions. Not sure how many other markets I am missing out on by not having localized software.
+
+    
+
+
