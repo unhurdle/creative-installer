@@ -113,6 +113,8 @@ Below a raw list of 'stuff I can think of' - most will probably not make it into
 
 * Build tools
 
+    Here, I am thinking about 'installing using a build tool' rather than 'building the installer with a build tool'.
+
     Tools like Maven: maybe those can be wrapped into an installer, to automatically pull in dependencies. Not sure if this can be wrapped up so the user stays shielded from the underlying complexity. 
 
 * DropBox or similar
