@@ -2,17 +2,17 @@
 
 Kris:
 
-My current idea is that I'd try to collect information, any information
-that is relevant to the making of installers. As far as I can tell,
-everyone has more or less different needs, and wants slightly different
-things from an installer. 
+My current idea is that I'd try to collect information, any information that is relevant to the making of installers. As far as I can tell, everyone has more or less different needs, and wants slightly different things from an installer. 
 
-However, the basic ingredients are always pretty much the same; it's just
-that some people prefer off-the-shelf stuff, some people prefer something
-'good enough', some people would use Xojo or Node.js or whathaveyou.
+However, the basic ingredients are always pretty much the same; it's just that some people prefer off-the-shelf stuff, some people prefer something 'good enough', some people would use Xojo or Node.js or whathaveyou.
 
-It does not matter what technology the installer is implemented with, a 
-number of basic things need to be covered, no matter what the technology used.
+It does not matter what technology the installer is implemented with, a number of basic things need to be covered, no matter what the technology used.
+
+Our 'TextExporter' plug-in has installers for Mac and Windows, and I find that maintaining it is a major pain in the behind: updates are far between, and the folders are littered with little readme files to help remind me of all kinds of hairy details that I need to remember to successfully rebuild the installer. There must be a better way. 
+
+My current thinking is that I would like to write a cross-platform replacement for extension manager in Xojo, something that's easy to 'feed'.
+
+Such a tool would not be the end-all for everyone - it's just what I currently think I want/need. But in the process, I need to discover lots of information that would be useful for anyone going through a similar process, so I am 'thinking out loud' and putting whatever I find or think here. Don't take any of what you read here as 'gospel' - it's more like the incoherent thoughts of a scatterbrain.
 
 # Aspects
 
