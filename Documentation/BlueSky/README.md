@@ -20,8 +20,10 @@ Such a tool would not be the end-all for everyone - it's just what I currently t
 
 First, let's think of anything that might be relevant to making an installer.
 
-Initially this can be listed here, but eventually these subjects will become
-large and will be moved to a subfolder/subdocument.
+Initially this can be listed here, but eventually these subjects might become
+large and would need be moved to a subfolder/subdocument. 
+
+Below a raw list of 'stuff I can think of' - most will probably not make it into my Xojo installer, but I want to make the conscious decision of considering or ignoring each aspect, rather than realize that something is important when it is too late.
 
 * Platform:
 
@@ -89,6 +91,43 @@ large and will be moved to a subfolder/subdocument.
 
     Depending on your market, localization can be unimportant or very important. In my case, the German market is non-negligible and generally speaking they seem to appreciate German-language versions. Not sure how many other markets I am missing out on by not having localized software.
 
-    
+* Logging/feedback
 
+    Not really an installer feature, but can be linked: the installer infrastructure might also provide logging services (so crash logs can be delivered to the developer).
+
+* Activation/Licensing
+
+    It might be desirable to have this part handled by the installer (or not). 
+
+* Unique user ID
+
+    Things like tracking the user's Adobe ID, Google ID, Apple ID, oauth, custom registration ID,... whathaveyou might be useful to link the licensing to the user. 
+
+* Dependencies
+
+    Sometimes there are dependencies on other software (e.g. you might need, say, Ghostscript installed). This might be important. 
+
+* Source Code Control
+    
+    Maybe it's useful to tie the installer into a 'front end' for a Git repo. Whatever is installed is whatever is available on some 'stable' branch in the repo. Hmm... That might be cool. Updating the installer could be as easy as merging the latest version into the 'installer' branch.
+
+* Build tools
+
+    Tools like Maven: maybe those can be wrapped into an installer, to automatically pull in dependencies. Not sure if this can be wrapped up so the user stays shielded from the underlying complexity. 
+
+* DropBox or similar
+
+    Maybe we can use DropBox or similar as a delivery mechanism for payload?
+
+* Upgrading
+
+    The installer can also be useful for upgrading
+
+* Rollback
+
+    If things fail, it should try to roll back. You cannot fix a broken hard disk, but you can always try to put stuff back the way it was.
+
+* Checking for updates
+
+    The installer can be helpful in checking for updates? 
 
