@@ -7,6 +7,7 @@ extension management, but of possible general interest.
 
 Mac:
 
+{{{
 /Library/Application Support/Adobe/Bridge CC Extensions/Adobe Illustrator Automation 2015/
 /Library/Application Support/Adobe/Bridge CC Extensions/Adobe Illustrator Automation/
 /Library/Application Support/Adobe/caps/caps.db
@@ -104,3 +105,4 @@ Mac:
 /Users/kris/Library/Application Support/Adobe/Extension Manager CS6/Configuration/DB/ExManUser.db
 /Users/kris/Library/Application Support/Adobe/Extension Manager CS6/EM Store/InDesign CS6
 /Users/kris/Library/Application Support/Adobe/Extension Manager CS6/Mxi Flag/InDesign CS6
+}}}
