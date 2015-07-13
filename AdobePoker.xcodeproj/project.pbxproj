@@ -50,7 +50,7 @@
 /* Begin PBXFileReference section */
 		017547CB1B53A9F90081FB20 /* ZXPI_AdobeRepositoryItf.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ZXPI_AdobeRepositoryItf.cpp; sourceTree = "<group>"; };
 		017547CC1B53A9F90081FB20 /* ZXPI_AdobeRepositoryItf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZXPI_AdobeRepositoryItf.h; sourceTree = "<group>"; };
-		01CD9F1D1B5300AD0041F7A8 /* ZXPInstaller */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = ZXPInstaller; sourceTree = BUILT_PRODUCTS_DIR; };
+		01CD9F1D1B5300AD0041F7A8 /* AdobePoker */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = AdobePoker; sourceTree = BUILT_PRODUCTS_DIR; };
 		01CD9F201B5300AD0041F7A8 /* ZXPI_Main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ZXPI_Main.cpp; sourceTree = "<group>"; };
 		01CD9F271B5304B30041F7A8 /* ZXPI_ArgumentParser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZXPI_ArgumentParser.h; sourceTree = "<group>"; };
 		01CD9F281B5304CC0041F7A8 /* ZXPI_ArgumentParser.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ZXPI_ArgumentParser.cpp; sourceTree = "<group>"; };
@@ -137,7 +137,7 @@
 		01CD9F1E1B5300AD0041F7A8 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				01CD9F1D1B5300AD0041F7A8 /* ZXPInstaller */,
+				01CD9F1D1B5300AD0041F7A8 /* AdobePoker */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -254,7 +254,7 @@
 			);
 			name = AdobePoker;
 			productName = ZXPInstaller;
-			productReference = 01CD9F1D1B5300AD0041F7A8 /* ZXPInstaller */;
+			productReference = 01CD9F1D1B5300AD0041F7A8 /* AdobePoker */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */

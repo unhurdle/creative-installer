@@ -15,8 +15,6 @@
 #include "ZXPI_Logging.h"
 
 void ZXPI_AdobeRepositoryItf_LIST(TZXPI_Context* context);
-void ZXPI_AdobeRepositoryItf_Read_PCD(TZXPI_Context* context);
-int ZXPI_AdobeRepositoryItf_Read_PCD_Callback(void *notUsed, int argc, char **argv, char **azColName);
 void ZXPI_AdobeRepositoryItf_Read_PDB(TZXPI_Context* context);
 int ZXPI_AdobeRepositoryItf_Read_PDB_Callback(void *notUsed, int argc, char **argv, char **azColName);
 
@@ -84,6 +82,11 @@ void ZXPI_AdobeRepositoryItf_Read_PDB(TZXPI_Context* context) {
     }
     
     char* errorMessage;
+    //
+    // The productName keys are found by looking in an installed database.
+    // Some of these are guessed, and I'm missing the ones for stuff I don't
+    // have installed. Will extend this as needed.
+    //
     result =
       sqlite3_exec(
         dbHandle,
@@ -144,17 +147,6 @@ void ZXPI_AdobeRepositoryItf_Read_PDB(TZXPI_Context* context) {
 
 void ZXPI_AdobeRepositoryItf_LIST(TZXPI_Context* context) {
   
-  //
-  // The installed products reside in multiple databases:
-  //
-  // /Library/Application Support/Adobe/Adobe PCD/pcd.db (older versions, up to CS6)
-  // /Library/Application Support/Adobe/caps/pdb.db (newer versions)
-  //
-  // There is also stuff in files called 'caps.db' but that does not seem to be very interesting
-  // at present. Might change as I find out more.
-  //
-  
   ZXPI_AdobeRepositoryItf_Read_PDB(context);
-  
   
 }
