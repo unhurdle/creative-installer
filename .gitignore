@@ -1,0 +1,6 @@
+AdobePoker.xcodeproj/xcuserdata
+build
+ZXPInstaller/zlib
+ZXPInstaller/expat
+ZXPInstaller/boost
+ZXPInstaller/sqlite
