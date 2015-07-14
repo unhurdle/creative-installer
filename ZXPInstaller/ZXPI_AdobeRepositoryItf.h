@@ -16,12 +16,6 @@
 #define kFilePath_AdobePDBDataBase "/Library/Application Support/Adobe/caps/pdb.db"
 #endif
 
-
-enum {
-  ZXPI_AdobeRepositoryItf_Command_NO_OP = 0,
-  ZXPI_AdobeRepositoryItf_Command_LIST
-};
-
-extern void ZXPI_AdobeRepositoryItf_DoCommand(TZXPI_Context* context, int command);
+extern void ZXPI_AdobeRepositoryItf_DoCommand(TZXPI_Context* context);
 
 #endif

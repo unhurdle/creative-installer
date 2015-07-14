@@ -12,15 +12,21 @@
 #include <string>
 
 typedef enum {
-  ZXPI_Mode_Help = 0,
-  ZXPI_Mode_InstallZXP,
-  ZXPI_Mode_ListInstalled,
-  ZXPI_Mode_ListExMan
-} TZXPI_Mode;
+  ZXPI_Command_Help = 0,
+  ZXPI_Command_ListInstalled,
+  ZXPI_Command_WhereIs
+} TZXPI_Command;
 
 struct TZXPI_Context {
-  TZXPI_Mode mode;
-  std::string zxpPath;
+  TZXPI_Command command;
+  std::string appIdentifier;
+  std::string appVersionIdentifier;
+  
+  TZXPI_Context():
+    command(ZXPI_Command_Help),
+    appIdentifier(),
+    appVersionIdentifier()
+    {};
 };
 
 #endif 

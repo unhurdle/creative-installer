@@ -29,6 +29,7 @@ void ZXPI_LogMessage(const int level, const char* format,...) {
     va_start(argp, format);
     
     vfprintf(stderr, format, argp);
+    fputc('\n', stderr);
     
     va_end(argp);
   }

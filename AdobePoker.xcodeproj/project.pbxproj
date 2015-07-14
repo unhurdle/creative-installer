@@ -7,11 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		01407F981B54993A0092EA10 /* libboost_filesystem.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 01407F971B54993A0092EA10 /* libboost_filesystem.a */; };
+		01407F9D1B5499940092EA10 /* libboost_system.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 01407F9C1B5499940092EA10 /* libboost_system.a */; };
 		017547CD1B53A9F90081FB20 /* ZXPI_AdobeRepositoryItf.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 017547CB1B53A9F90081FB20 /* ZXPI_AdobeRepositoryItf.cpp */; };
 		01CD9F211B5300AD0041F7A8 /* ZXPI_Main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 01CD9F201B5300AD0041F7A8 /* ZXPI_Main.cpp */; };
 		01CD9F291B5304CC0041F7A8 /* ZXPI_ArgumentParser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 01CD9F281B5304CC0041F7A8 /* ZXPI_ArgumentParser.cpp */; };
 		01CD9F301B53091D0041F7A8 /* ZXPI_Logging.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 01CD9F2E1B53091D0041F7A8 /* ZXPI_Logging.cpp */; };
-		01CD9F341B5313350041F7A8 /* ZXPI_InstallZXP.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 01CD9F321B5313350041F7A8 /* ZXPI_InstallZXP.cpp */; };
 		01CD9F381B5323DB0041F7A8 /* sqlite3.c in Sources */ = {isa = PBXBuildFile; fileRef = 01CD9F361B5323DB0041F7A8 /* sqlite3.c */; };
 		01CD9F551B5324420041F7A8 /* xmlparse.c in Sources */ = {isa = PBXBuildFile; fileRef = 01CD9F4D1B5324420041F7A8 /* xmlparse.c */; };
 		01CD9F561B5324420041F7A8 /* xmlrole.c in Sources */ = {isa = PBXBuildFile; fileRef = 01CD9F4E1B5324420041F7A8 /* xmlrole.c */; };
@@ -32,7 +33,6 @@
 		01CD9F821B53320C0041F7A8 /* trees.c in Sources */ = {isa = PBXBuildFile; fileRef = 01CD9F701B53320C0041F7A8 /* trees.c */; };
 		01CD9F831B53320C0041F7A8 /* uncompr.c in Sources */ = {isa = PBXBuildFile; fileRef = 01CD9F721B53320C0041F7A8 /* uncompr.c */; };
 		01CD9F841B53320C0041F7A8 /* zutil.c in Sources */ = {isa = PBXBuildFile; fileRef = 01CD9F751B53320C0041F7A8 /* zutil.c */; };
-		01CD9F881B5336CE0041F7A8 /* ZXPI_ExManItf.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 01CD9F871B5336CE0041F7A8 /* ZXPI_ExManItf.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -48,6 +48,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		01407F961B54981C0092EA10 /* ReadMe.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ReadMe.txt; sourceTree = "<group>"; };
+		01407F971B54993A0092EA10 /* libboost_filesystem.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libboost_filesystem.a; path = "boost/bin.v2/libs/filesystem/build/darwin-4.2.1/release/address-model-32_64/link-static/threading-multi/libboost_filesystem.a"; sourceTree = "<group>"; };
+		01407F9C1B5499940092EA10 /* libboost_system.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libboost_system.a; path = "boost/bin.v2/libs/system/build/darwin-4.2.1/release/address-model-32_64/link-static/threading-multi/libboost_system.a"; sourceTree = "<group>"; };
 		017547CB1B53A9F90081FB20 /* ZXPI_AdobeRepositoryItf.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ZXPI_AdobeRepositoryItf.cpp; sourceTree = "<group>"; };
 		017547CC1B53A9F90081FB20 /* ZXPI_AdobeRepositoryItf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZXPI_AdobeRepositoryItf.h; sourceTree = "<group>"; };
 		01CD9F1D1B5300AD0041F7A8 /* AdobePoker */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = AdobePoker; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -59,8 +62,6 @@
 		01CD9F2E1B53091D0041F7A8 /* ZXPI_Logging.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ZXPI_Logging.cpp; sourceTree = "<group>"; };
 		01CD9F2F1B53091D0041F7A8 /* ZXPI_Logging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZXPI_Logging.h; sourceTree = "<group>"; };
 		01CD9F311B530EB70041F7A8 /* ZXPI_ConfigConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZXPI_ConfigConstants.h; sourceTree = "<group>"; };
-		01CD9F321B5313350041F7A8 /* ZXPI_InstallZXP.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ZXPI_InstallZXP.cpp; sourceTree = "<group>"; };
-		01CD9F331B5313350041F7A8 /* ZXPI_InstallZXP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZXPI_InstallZXP.h; sourceTree = "<group>"; };
 		01CD9F361B5323DB0041F7A8 /* sqlite3.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = sqlite3.c; path = sqlite/sqlite3.c; sourceTree = "<group>"; };
 		01CD9F371B5323DB0041F7A8 /* sqlite3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = sqlite3.h; path = sqlite/sqlite3.h; sourceTree = "<group>"; };
 		01CD9F3B1B5324420041F7A8 /* ascii.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ascii.h; path = expat/lib/ascii.h; sourceTree = "<group>"; };
@@ -111,8 +112,6 @@
 		01CD9F751B53320C0041F7A8 /* zutil.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = zutil.c; path = zlib/zutil.c; sourceTree = "<group>"; };
 		01CD9F761B53320C0041F7A8 /* zutil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = zutil.h; path = zlib/zutil.h; sourceTree = "<group>"; };
 		01CD9F851B5332500041F7A8 /* ZXPI_ConfigZlib.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZXPI_ConfigZlib.h; sourceTree = "<group>"; };
-		01CD9F861B5336AA0041F7A8 /* ZXPI_ExManItf.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZXPI_ExManItf.h; sourceTree = "<group>"; };
-		01CD9F871B5336CE0041F7A8 /* ZXPI_ExManItf.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ZXPI_ExManItf.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,12 +119,23 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				01407F9D1B5499940092EA10 /* libboost_system.a in Frameworks */,
+				01407F981B54993A0092EA10 /* libboost_filesystem.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		01407F991B5499420092EA10 /* boost */ = {
+			isa = PBXGroup;
+			children = (
+				01407F9C1B5499940092EA10 /* libboost_system.a */,
+				01407F971B54993A0092EA10 /* libboost_filesystem.a */,
+			);
+			name = boost;
+			sourceTree = "<group>";
+		};
 		01CD9F141B5300AD0041F7A8 = {
 			isa = PBXGroup;
 			children = (
@@ -145,6 +155,7 @@
 		01CD9F1F1B5300AD0041F7A8 /* ZXPInstaller */ = {
 			isa = PBXGroup;
 			children = (
+				01407F991B5499420092EA10 /* boost */,
 				01CD9F5D1B5331D20041F7A8 /* zlib */,
 				01CD9F391B5324040041F7A8 /* expat */,
 				01CD9F351B5323CA0041F7A8 /* sqlite */,
@@ -157,15 +168,12 @@
 				01CD9F851B5332500041F7A8 /* ZXPI_ConfigZlib.h */,
 				01CD9F2D1B5306B70041F7A8 /* ZXPI_Constants.h */,
 				01CD9F2B1B5304F10041F7A8 /* ZXPI_Context.h */,
-				01CD9F861B5336AA0041F7A8 /* ZXPI_ExManItf.h */,
-				01CD9F871B5336CE0041F7A8 /* ZXPI_ExManItf.cpp */,
-				01CD9F331B5313350041F7A8 /* ZXPI_InstallZXP.h */,
-				01CD9F321B5313350041F7A8 /* ZXPI_InstallZXP.cpp */,
 				01CD9F2F1B53091D0041F7A8 /* ZXPI_Logging.h */,
 				01CD9F2E1B53091D0041F7A8 /* ZXPI_Logging.cpp */,
 				01CD9F201B5300AD0041F7A8 /* ZXPI_Main.cpp */,
 				01CD9F5B1B5325A90041F7A8 /* ZXPI_PrecompiledHeaders.h */,
 				01CD9F5C1B532C190041F7A8 /* ZXPI_RestoreCompilerWarnings.h */,
+				01407F961B54981C0092EA10 /* ReadMe.txt */,
 			);
 			path = ZXPInstaller;
 			sourceTree = "<group>";
@@ -294,7 +302,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				01CD9F841B53320C0041F7A8 /* zutil.c in Sources */,
-				01CD9F341B5313350041F7A8 /* ZXPI_InstallZXP.cpp in Sources */,
 				01CD9F581B5324420041F7A8 /* xmltok_ns.c in Sources */,
 				01CD9F591B5324420041F7A8 /* xmltok.c in Sources */,
 				017547CD1B53A9F90081FB20 /* ZXPI_AdobeRepositoryItf.cpp in Sources */,
@@ -318,7 +325,6 @@
 				01CD9F571B5324420041F7A8 /* xmltok_impl.c in Sources */,
 				01CD9F381B5323DB0041F7A8 /* sqlite3.c in Sources */,
 				01CD9F7A1B53320C0041F7A8 /* gzclose.c in Sources */,
-				01CD9F881B5336CE0041F7A8 /* ZXPI_ExManItf.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -363,6 +369,11 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					ZXPInstaller/boost,
+				);
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = NO;
@@ -404,6 +415,11 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					ZXPInstaller/boost,
+				);
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				OTHER_CFLAGS = "";
@@ -414,6 +430,12 @@
 		01CD9F251B5300AD0041F7A8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/ZXPInstaller/boost/bin.v2/libs/filesystem/build/darwin-4.2.1/release/address-model-32_64/link-static/threading-multi",
+					"$(PROJECT_DIR)/ZXPInstaller/boost/bin.v2/libs/locale/build/darwin-4.2.1/release/address-model-32_64/link-static/threading-multi",
+					"$(PROJECT_DIR)/ZXPInstaller/boost/bin.v2/libs/system/build/darwin-4.2.1/release/address-model-32_64/link-static/threading-multi",
+				);
 				PRODUCT_NAME = AdobePoker;
 			};
 			name = Debug;
@@ -421,6 +443,12 @@
 		01CD9F261B5300AD0041F7A8 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/ZXPInstaller/boost/bin.v2/libs/filesystem/build/darwin-4.2.1/release/address-model-32_64/link-static/threading-multi",
+					"$(PROJECT_DIR)/ZXPInstaller/boost/bin.v2/libs/locale/build/darwin-4.2.1/release/address-model-32_64/link-static/threading-multi",
+					"$(PROJECT_DIR)/ZXPInstaller/boost/bin.v2/libs/system/build/darwin-4.2.1/release/address-model-32_64/link-static/threading-multi",
+				);
 				PRODUCT_NAME = AdobePoker;
 			};
 			name = Release;
