@@ -27,15 +27,24 @@
 #include "ZXPI_AdobeRepositoryItf.h"
 #include "ZXPI_Logging.h"
 
-bool  ZXPI_AdobeRepositoryItf_DeriveApplicationPath(const std::string& pathString, std::string& applicationPath);
-bool  ZXPI_AdobeRepositoryItf_DerivePhotoshopPath(const std::string& pathString, std::string& applicationPath);
+bool  ZXPI_AdobeRepositoryItf_DeriveApplicationPath(TZXPI_Context* context, const std::string& pathString, std::string& applicationPath);
+bool  ZXPI_AdobeRepositoryItf_DerivePhotoshopPath(TZXPI_Context* context, const std::string& pathString, std::string& applicationPath);
+bool  ZXPI_AdobeRepositoryItf_IsAppPath(TZXPI_Context* context, const boost::filesystem::path& path);
 void  ZXPI_AdobeRepositoryItf_ListInstalled(TZXPI_Context* context);
 int   ZXPI_AdobeRepositoryItf_ListInstalled_CallBack(void *notUsed, int argc, char **argv, char **azColName);
 void  ZXPI_AdobeRepositoryItf_WhereIs(TZXPI_Context* context);
 int   ZXPI_AdobeRepositoryItf_WhereIs_CallBack(void *notUsed, int argc, char **argv, char **azColName);
 void  ZXPI_AdobeRepositoryItf_WhereIs(TZXPI_Context* context);
 
-bool ZXPI_AdobeRepositoryItf_DeriveApplicationPath(const std::string& pathString, std::string& applicationPath) {
+bool ZXPI_AdobeRepositoryItf_IsAppPath(TZXPI_Context* context, const boost::filesystem::path& path) {
+    std::string extension(path.extension().string());
+    boost::algorithm::to_lower(extension);
+    std::string filename(path.filename().string());
+    boost::algorithm::to_lower(filename);
+    return (extension == ".app" && boost::contains(filename, context->appIdentifier));
+}
+
+bool ZXPI_AdobeRepositoryItf_DeriveApplicationPath(TZXPI_Context* context, const std::string& pathString, std::string& applicationPath) {
   
   bool searching = true;
   bool found = false;
@@ -43,14 +52,13 @@ bool ZXPI_AdobeRepositoryItf_DeriveApplicationPath(const std::string& pathString
   applicationPath.clear();
   
   boost::filesystem::path curSearchPath(pathString);
-  std::string extension;
   while (searching) {
     if (! boost::filesystem::exists(curSearchPath)) {
       searching = false;
     }
     else if (boost::filesystem::is_directory(curSearchPath)) {
-      extension = curSearchPath.extension().native();
-      if (extension == ".app") {
+#if MACINTOSH
+      if (ZXPI_AdobeRepositoryItf_IsAppPath(context, curSearchPath)) {
         searching = false;
         found = true;
         applicationPath = curSearchPath.native();
@@ -59,20 +67,17 @@ bool ZXPI_AdobeRepositoryItf_DeriveApplicationPath(const std::string& pathString
         boost::filesystem::directory_iterator end_itr; // default construction yields past-the-end
         boost::filesystem::directory_iterator itr(curSearchPath);
         while (itr != end_itr) {
-#if MACINTOSH
           if (boost::filesystem::is_directory(itr->status())) {
-            extension = itr->path().extension().native();
-            boost::algorithm::to_lower(extension);
-            if (extension == ".app") {
+            if (ZXPI_AdobeRepositoryItf_IsAppPath(context, itr->path())) {
               searching = false;
               found = true;
-              applicationPath = itr->path().native();
+              applicationPath = itr->path().string();
             }
           }
-#endif
           ++itr;
         }
       }
+#endif
     }
     if (searching) {
       if (! curSearchPath.has_parent_path()) {
@@ -87,7 +92,7 @@ bool ZXPI_AdobeRepositoryItf_DeriveApplicationPath(const std::string& pathString
   return found;
 }
 
-bool ZXPI_AdobeRepositoryItf_DerivePhotoshopPath(const std::string& pathString, std::string& applicationPath) {
+bool ZXPI_AdobeRepositoryItf_DerivePhotoshopPath(TZXPI_Context* context, const std::string& pathString, std::string& applicationPath) {
   
   bool searching = true;
   bool found = false;
@@ -101,13 +106,12 @@ bool ZXPI_AdobeRepositoryItf_DerivePhotoshopPath(const std::string& pathString, 
   
   boost::filesystem::path curSearchPath(pathString);
   while (searching) {
-    const std::string appName(curSearchPath.filename().native());
-    if (boost::starts_with(appName, "Adobe Photoshop CC")) {
+    const std::string pathStringComponent(curSearchPath.filename().string());
+    if (boost::contains(pathStringComponent, "Photoshop") && boost::contains(pathStringComponent, "CC")) {
       searching = false;
-      found = true;
       passwd* pw = getpwuid(getuid());
       std::string homeFolder(pw->pw_dir);
-      const std::string prefsFile(homeFolder + "/Library/Preferences/" + appName + " Paths");
+      const std::string prefsFile(homeFolder + "/Library/Preferences/" + pathStringComponent + " Paths");
       
       std::ifstream prefsFileStream(prefsFile.c_str(), std::ios::in | std::ios::binary);
       if (prefsFileStream) {
@@ -123,7 +127,7 @@ bool ZXPI_AdobeRepositoryItf_DerivePhotoshopPath(const std::string& pathString, 
         //
         // Now find the .app file inside the folder
         //
-        ZXPI_AdobeRepositoryItf_DeriveApplicationPath(applicationFolderPathString, applicationPath);
+        found = ZXPI_AdobeRepositoryItf_DeriveApplicationPath(context, applicationFolderPathString, applicationPath);
       }
     }
     if (searching) {
@@ -190,7 +194,7 @@ void ZXPI_AdobeRepositoryItf_ListInstalled(TZXPI_Context* context) {
       sqlite3_exec(
         dbHandle,
         "select \
-           da.value as BridgeTalkCode, db.value as driverAMTConfigPath \
+           da.value as BridgeTalkCode, db.value as AMTConfigPath \
          from \
            domain_data as da, domain_data as db \
          where \
@@ -198,7 +202,7 @@ void ZXPI_AdobeRepositoryItf_ListInstalled(TZXPI_Context* context) {
           and \
             da.subDomain = db.subDomain \
           and \
-            db.key = 'driverAMTConfigPath'",
+            db.key = 'AMTConfigPath'",
         ZXPI_AdobeRepositoryItf_ListInstalled_CallBack,
         0,
         &errorMessage);
@@ -256,7 +260,7 @@ void ZXPI_AdobeRepositoryItf_WhereIs(TZXPI_Context* context) {
       sqlite3_prepare(
         dbHandle,
         "select \
-           db.value as driverAMTConfigPath \
+           db.value as AMTConfigPath \
          from \
            domain_data as da, domain_data as db \
          where \
@@ -264,7 +268,7 @@ void ZXPI_AdobeRepositoryItf_WhereIs(TZXPI_Context* context) {
           and \
             da.subDomain = db.subDomain \
           and \
-            db.key = 'driverAMTConfigPath' \
+            db.key = 'AMTConfigPath' \
           and \
             da.value like ?",
         -1,
@@ -301,10 +305,10 @@ void ZXPI_AdobeRepositoryItf_WhereIs(TZXPI_Context* context) {
         if (cPath != NULL) {
           std::string pathString((char*) cPath);
           std::string applicationPath;
-          ZXPI_AdobeRepositoryItf_DeriveApplicationPath(pathString, applicationPath);
+          ZXPI_AdobeRepositoryItf_DeriveApplicationPath(context, pathString, applicationPath);
           
-          if (applicationPath.empty() && boost::starts_with(context->appIdentifier, "photoshop")) {
-            ZXPI_AdobeRepositoryItf_DerivePhotoshopPath(pathString, applicationPath);
+          if (applicationPath.empty() && boost::starts_with(context->appIdentifier, "pho"/*toshop*/)) {
+            ZXPI_AdobeRepositoryItf_DerivePhotoshopPath(context, pathString, applicationPath);
           }
           
           if (! applicationPath.empty()) {
