@@ -16,7 +16,14 @@
 #include <boost/algorithm/string.hpp>
 #include <boost/filesystem.hpp>
 
+#if WINDOWS
+#include <Windows.h>
+#include <shlobj.h>
+#endif
+
+#if MACINTOSH
 #include <pwd.h>
+#endif
 #include <sys/stat.h>
 
 #include "sqlite3.h"
@@ -49,11 +56,11 @@ bool ZXPI_AdobeRepositoryItf_DeriveApplicationPath(const std::string& pathString
       searching = false;
     }
     else if (boost::filesystem::is_directory(curSearchPath)) {
-      extension = curSearchPath.extension().native();
+      extension = curSearchPath.extension().string();
       if (extension == ".app") {
         searching = false;
         found = true;
-        applicationPath = curSearchPath.native();
+        applicationPath = curSearchPath.string();
       }
       else {
         boost::filesystem::directory_iterator end_itr; // default construction yields past-the-end
@@ -101,14 +108,22 @@ bool ZXPI_AdobeRepositoryItf_DerivePhotoshopPath(const std::string& pathString, 
   
   boost::filesystem::path curSearchPath(pathString);
   while (searching) {
-    const std::string appName(curSearchPath.filename().native());
+    const std::string appName(curSearchPath.filename().string());
     if (boost::starts_with(appName, "Adobe Photoshop CC")) {
       searching = false;
       found = true;
+#if MACINTOSH
       passwd* pw = getpwuid(getuid());
       std::string homeFolder(pw->pw_dir);
       const std::string prefsFile(homeFolder + "/Library/Preferences/" + appName + " Paths");
-      
+#endif
+#if WINDOWS
+	  WCHAR* homeFolder;
+	  if (SUCCEEDED(SHGetKnownFolderPath(FOLDERID_ProgramFiles, 0, NULL, &homeFolder)) {
+		  std::wstring(homeFolder);
+		  CoTaskMemFree(homeFolder);
+	  }
+#endif
       std::ifstream prefsFileStream(prefsFile.c_str(), std::ios::in | std::ios::binary);
       if (prefsFileStream) {
         std::ostringstream contents;

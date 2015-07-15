@@ -17,6 +17,8 @@
 // anything else, we re-enable all that was disabled
 //
 
+#if MACINTOSH
 #pragma clang diagnostic pop
+#endif
 
 #endif
