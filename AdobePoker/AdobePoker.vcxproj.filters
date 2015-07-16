@@ -211,10 +211,10 @@
     <Text Include="..\ZXPInstaller\ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
-    <Library Include="..\ZXPInstaller\boost\bin.v2\libs\filesystem\build\msvc-12.0\release\link-static\threading-multi\libboost_filesystem-vc120-mt-1_58.lib">
+    <Library Include="..\ZXPInstaller\boost\bin.v2\libs\filesystem\build\msvc-11.0\release\link-static\threading-multi\libboost_filesystem-vc110-mt-1_58.lib">
       <Filter>Source Files\boost</Filter>
     </Library>
-    <Library Include="..\ZXPInstaller\boost\bin.v2\libs\system\build\msvc-12.0\release\link-static\threading-multi\libboost_system-vc120-mt-1_58.lib">
+    <Library Include="..\ZXPInstaller\boost\bin.v2\libs\system\build\msvc-11.0\release\link-static\threading-multi\libboost_system-vc110-mt-1_58.lib">
       <Filter>Source Files\boost</Filter>
     </Library>
   </ItemGroup>

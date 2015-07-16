@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project DefaultTargets="Build" ToolsVersion="11.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
       <Configuration>Debug</Configuration>
@@ -77,8 +77,8 @@
     <Text Include="..\ZXPInstaller\ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
-    <Library Include="..\ZXPInstaller\boost\bin.v2\libs\filesystem\build\msvc-12.0\release\link-static\threading-multi\libboost_filesystem-vc120-mt-1_58.lib" />
-    <Library Include="..\ZXPInstaller\boost\bin.v2\libs\system\build\msvc-12.0\release\link-static\threading-multi\libboost_system-vc120-mt-1_58.lib" />
+    <Library Include="..\ZXPInstaller\boost\bin.v2\libs\filesystem\build\msvc-11.0\release\link-static\threading-multi\libboost_filesystem-vc110-mt-1_58.lib" />
+    <Library Include="..\ZXPInstaller\boost\bin.v2\libs\system\build\msvc-11.0\release\link-static\threading-multi\libboost_system-vc110-mt-1_58.lib" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{C0D5B9F6-9A0E-447D-9A38-0884991AAA54}</ProjectGuid>
@@ -89,13 +89,13 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v120</PlatformToolset>
+    <PlatformToolset>v110</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v120</PlatformToolset>
+    <PlatformToolset>v110</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
