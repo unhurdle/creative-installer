@@ -16,7 +16,7 @@
 // #include ZXPI_RestoreCompilerWarnings.h before the ZXPI sources to restore
 // the disabled warnings
 //
-
+#if MACINTOSH
 #pragma clang diagnostic push
 
 #pragma clang diagnostic ignored "-Wenum-conversion"
@@ -24,6 +24,12 @@
 #pragma clang diagnostic ignored "-Wambiguous-macro"
 #pragma clang diagnostic ignored "-Wunreachable-code"
 #pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+
+#if WINDOWS
+#pragma warning( push )
+#pragma warning( disable : 4996 )
+#endif
 
 #include "ZXPI_ConfigExpat.h"
 #include "ZXPI_ConfigZlib.h"

@@ -109,10 +109,23 @@ bool ZXPI_AdobeRepositoryItf_DerivePhotoshopPath(TZXPI_Context* context, const s
     const std::string pathStringComponent(curSearchPath.filename().string());
     if (boost::contains(pathStringComponent, "Photoshop") && boost::contains(pathStringComponent, "CC")) {
       searching = false;
+#if MACINTOSH      
       passwd* pw = getpwuid(getuid());
       std::string homeFolder(pw->pw_dir);
       const std::string prefsFile(homeFolder + "/Library/Preferences/" + pathStringComponent + " Paths");
-      
+#endif      
+#if WINDOWS
+    //FOLDERID_ProgramFilesCommonX86
+    WCHAR* roamingAppData = NULL;
+    std::wstring photoshopPathPrefsPath;
+    if (SUCCEEDED(SHGetKnownFolderPath(FOLDERID_RoamingAppData, 0, NULL, &roamingAppData))) {
+      photoshopPathPrefsPath = roamingAppData;
+      CoTaskMemFree((LPVOID) roamingAppData);
+      roamingAppData = NULL;
+      const std::wstring wAppName(appName.begin(), appName.end());
+      photoshopPathPrefsPath.append(wAppName + L" Paths");
+    }
+#endif
       std::ifstream prefsFileStream(prefsFile.c_str(), std::ios::in | std::ios::binary);
       if (prefsFileStream) {
         std::ostringstream contents;

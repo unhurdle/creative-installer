@@ -9,6 +9,8 @@
 #ifndef _ZXPI_ConfigZlib_
 #define _ZXPI_ConfigZlib_
 
+#if MACINTOSH
 #include <unistd.h>
+#endif
 
 #endif

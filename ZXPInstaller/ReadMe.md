@@ -11,6 +11,8 @@ You need to decompress them in the 'ZXPInstaller' directory, named
 
 Boost needs to be installed and built.
 
+The other externals are purely source-code dependencies - no compiled components.
+
 ## Mac
 
 You also need to have the Mac OS X 10.7 SDK available.
@@ -71,6 +73,19 @@ to generate Universal libs
 
 --
 
+## Windows
+
+### Visual Studio 2013
+
+I am using Visual Studio 2013 Community Edition which is a free download.
+
+The project is purely 32-bit. That's OK - we have no need for large data blobs, and the program should work fine on 64-bit Windows too.
+
+To compile Boost I used:
+
+bootstrap
+bjam --toolset=msvc-12.0 --build-type=complete stage
+
 # Gotchas
 
 For Photoshop CC 2015 the application path cannot be found in the pcb.db database. Instead,
@@ -78,4 +93,13 @@ the latest path to the Photoshop app resides in a preferences file
 
 ~/Library/Preferences/Adobe Photoshop CC 2015 Paths
 
+This file contains two zero-character separated paths (one for the Plug-Ins path, one for the app path)
+
 Photoshop CC 2014 also provides a similar file, but the pcb.db database seems to be working too
+
+On Windows, this seems to be different - here the info seems to reside in a file called 
+
+%APPDATA%\Adobe\Adobe Photoshop CC 2015\Adobe Photoshop CC 2015 Settings\MachinePrefs.psp
+
+This file contains a lot of stuff. Need to figure out the file format - seems to be some tag+length+data type.
+

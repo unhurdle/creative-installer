@@ -16,6 +16,12 @@
 #define kFilePath_AdobePDBDataBase "/Library/Application Support/Adobe/caps/pdb.db"
 #endif
 
+#if WINDOWS
+#define kFilePath_AdobePCDDataBase "C:\\Program Files (x86)\\Common Files\\Adobe\\Adobe PCD\\pcd.db"
+#define kFilePath_AdobePDBDataBase "C:\\Program Files (x86)\\Common Files\\Adobe\\caps\\pdb.db"
+#endif
+
+
 extern void ZXPI_AdobeRepositoryItf_DoCommand(TZXPI_Context* context);
 
 #endif
