@@ -115,16 +115,22 @@ bool ZXPI_AdobeRepositoryItf_DerivePhotoshopPath(const std::string& pathString, 
 #if MACINTOSH
       passwd* pw = getpwuid(getuid());
       std::string homeFolder(pw->pw_dir);
-      const std::string prefsFile(homeFolder + "/Library/Preferences/" + appName + " Paths");
+      const std::string photoshopPathPrefsPath(homeFolder + "/Library/Preferences/" + appName + " Paths");
 #endif
 #if WINDOWS
-	  WCHAR* homeFolder;
-	  if (SUCCEEDED(SHGetKnownFolderPath(FOLDERID_ProgramFiles, 0, NULL, &homeFolder)) {
-		  std::wstring(homeFolder);
-		  CoTaskMemFree(homeFolder);
+
+	  //FOLDERID_ProgramFilesCommonX86
+	  WCHAR* roamingAppData = NULL;
+	  std::wstring photoshopPathPrefsPath;
+	  if (SUCCEEDED(SHGetKnownFolderPath(FOLDERID_RoamingAppData, 0, NULL, &roamingAppData))) {
+		  photoshopPathPrefsPath = roamingAppData;
+		  CoTaskMemFree((LPVOID) roamingAppData);
+		  roamingAppData = NULL;
+		  const std::wstring wAppName(appName.begin(), appName.end());
+		  photoshopPathPrefsPath.append(wAppName + L" Paths");
 	  }
 #endif
-      std::ifstream prefsFileStream(prefsFile.c_str(), std::ios::in | std::ios::binary);
+      std::ifstream prefsFileStream(photoshopPathPrefsPath.c_str(), std::ios::in | std::ios::binary);
       if (prefsFileStream) {
         std::ostringstream contents;
         contents << prefsFileStream.rdbuf();

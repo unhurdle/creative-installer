@@ -8,3 +8,6 @@ AdobePoker.xcodeproj/project.xcworkspace
 AdobePoker/Debug/
 *.sdf
 AdobePoker/ipch/
+Windows/Release/
+Windows/Debug/
+*.opensdf

@@ -17,6 +17,10 @@
 // anything else, we re-enable all that was disabled
 //
 
+#if WINDOWS
+#pragma warning( pop )
+#endif
+
 #if MACINTOSH
 #pragma clang diagnostic pop
 #endif

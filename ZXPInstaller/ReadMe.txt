@@ -46,3 +46,4 @@ the latest path to the Photoshop app resides in a preferences file
 
 ~/Library/Preferences/Adobe Photoshop CC 2015 Paths
 
+bjam --toolset=msvc-12.0 --build-type=complete stage
