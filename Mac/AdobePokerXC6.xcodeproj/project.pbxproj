@@ -434,11 +434,10 @@
 				GCC_PREFIX_HEADER = ../ZXPInstaller/ZXPI_Prefix.h;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/../ZXPInstaller/boost/bin.v2/libs/filesystem/build/darwin-4.2.1/release/address-model-32_64/link-static/threading-multi",
-					"$(PROJECT_DIR)/../ZXPInstaller/boost/bin.v2/libs/locale/build/darwin-4.2.1/release/address-model-32_64/link-static/threading-multi",
-					"$(PROJECT_DIR)/../ZXPInstaller/boost/bin.v2/libs/system/build/darwin-4.2.1/release/address-model-32_64/link-static/threading-multi",
+					../ZXPInstaller/boost/stage/lib,
 				);
 				PRODUCT_NAME = AdobePoker;
+				SYMROOT = "$(PROJECT_DIR)/build";
 			};
 			name = Debug;
 		};
@@ -448,11 +447,10 @@
 				GCC_PREFIX_HEADER = ../ZXPInstaller/ZXPI_Prefix.h;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/../ZXPInstaller/boost/bin.v2/libs/filesystem/build/darwin-4.2.1/release/address-model-32_64/link-static/threading-multi",
-					"$(PROJECT_DIR)/../ZXPInstaller/boost/bin.v2/libs/locale/build/darwin-4.2.1/release/address-model-32_64/link-static/threading-multi",
-					"$(PROJECT_DIR)/../ZXPInstaller/boost/bin.v2/libs/system/build/darwin-4.2.1/release/address-model-32_64/link-static/threading-multi",
+					../ZXPInstaller/boost/stage/lib,
 				);
 				PRODUCT_NAME = AdobePoker;
+				SYMROOT = "$(PROJECT_DIR)/build";
 			};
 			name = Release;
 		};
