@@ -34,4 +34,11 @@
 #include "ZXPI_ConfigExpat.h"
 #include "ZXPI_ConfigZlib.h"
 
+#if WINDOWS
+// Side-step conflict in ELELENT_TYPE in winioctl.h vs xmlparser.c
+#define ELEMENT_TYPE ELEMENT_TYPE_WIN
+#include <Windows.h>
+#undef ELEMENT_TYPE
+#endif
+
 #endif

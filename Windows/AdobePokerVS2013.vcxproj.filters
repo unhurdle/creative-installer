@@ -101,33 +101,6 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\ZXPInstaller\ZXPI_AdobeRepositoryItf.h">
-      <Filter>Source Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\ZXPInstaller\ZXPI_ArgumentParser.h">
-      <Filter>Source Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\ZXPInstaller\ZXPI_ConfigConstants.h">
-      <Filter>Source Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\ZXPInstaller\ZXPI_ConfigExpat.h">
-      <Filter>Source Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\ZXPInstaller\ZXPI_ConfigZlib.h">
-      <Filter>Source Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\ZXPInstaller\ZXPI_Constants.h">
-      <Filter>Source Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\ZXPInstaller\ZXPI_Context.h">
-      <Filter>Source Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\ZXPInstaller\ZXPI_Logging.h">
-      <Filter>Source Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\ZXPInstaller\ZXPI_RestoreCompilerWarnings.h">
-      <Filter>Source Files</Filter>
-    </ClInclude>
     <ClInclude Include="..\ZXPInstaller\zlib\crc32.h">
       <Filter>Source Files\zlib</Filter>
     </ClInclude>
@@ -203,8 +176,35 @@
     <ClInclude Include="..\ZXPInstaller\expat\lib\xmltok_impl.h">
       <Filter>Source Files\expat</Filter>
     </ClInclude>
+    <ClInclude Include="..\ZXPInstaller\ZXPI_AdobeRepositoryItf.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ZXPInstaller\ZXPI_ArgumentParser.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ZXPInstaller\ZXPI_ConfigConstants.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ZXPInstaller\ZXPI_ConfigZlib.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ZXPInstaller\ZXPI_ConfigExpat.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ZXPInstaller\ZXPI_Constants.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ZXPInstaller\ZXPI_Context.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ZXPInstaller\ZXPI_Logging.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="..\ZXPInstaller\ZXPI_Prefix.h">
-      <Filter>Source Files</Filter>
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ZXPInstaller\ZXPI_RestoreCompilerWarnings.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

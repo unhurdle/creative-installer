@@ -16,7 +16,14 @@
 #include <boost/algorithm/string.hpp>
 #include <boost/filesystem.hpp>
 
+#if MACINTOSH
 #include <pwd.h>
+#endif
+
+#if WINDOWS
+#include <Shlobj.h>
+#endif
+
 #include <sys/stat.h>
 
 #include "sqlite3.h"
@@ -28,7 +35,9 @@
 #include "ZXPI_Logging.h"
 
 bool  ZXPI_AdobeRepositoryItf_DeriveApplicationPath(TZXPI_Context* context, const std::string& pathString, std::string& applicationPath);
+#if MACINTOSH
 bool  ZXPI_AdobeRepositoryItf_DerivePhotoshopPath(TZXPI_Context* context, const std::string& pathString, std::string& applicationPath);
+#endif
 bool  ZXPI_AdobeRepositoryItf_IsAppPath(TZXPI_Context* context, const boost::filesystem::path& path);
 void  ZXPI_AdobeRepositoryItf_ListInstalled(TZXPI_Context* context);
 int   ZXPI_AdobeRepositoryItf_ListInstalled_CallBack(void *notUsed, int argc, char **argv, char **azColName);
@@ -36,12 +45,38 @@ void  ZXPI_AdobeRepositoryItf_WhereIs(TZXPI_Context* context);
 int   ZXPI_AdobeRepositoryItf_WhereIs_CallBack(void *notUsed, int argc, char **argv, char **azColName);
 void  ZXPI_AdobeRepositoryItf_WhereIs(TZXPI_Context* context);
 
+#if MACINTOSH
+#define APP_EXTENSION ".app"
+#endif
+
+#if WINDOWS
+#define APP_EXTENSION ".exe"
+#endif
+
 bool ZXPI_AdobeRepositoryItf_IsAppPath(TZXPI_Context* context, const boost::filesystem::path& path) {
+
+  bool retVal = false;
+
+  do {
+#if WINDOWS
+    if (! boost::filesystem::is_regular_file(path)) {
+      break;
+    }
+#endif
+#if MACINTOSH
+    if (! boost::filesystem::is_directory(path)) {
+      break;
+  }
+#endif
     std::string extension(path.extension().string());
     boost::algorithm::to_lower(extension);
     std::string filename(path.filename().string());
     boost::algorithm::to_lower(filename);
-    return (extension == ".app" && boost::contains(filename, context->appIdentifier));
+    retVal = (extension == APP_EXTENSION && boost::contains(filename, context->appIdentifier));
+}
+  while (false);
+
+  return retVal;
 }
 
 bool ZXPI_AdobeRepositoryItf_DeriveApplicationPath(TZXPI_Context* context, const std::string& pathString, std::string& applicationPath) {
@@ -57,27 +92,23 @@ bool ZXPI_AdobeRepositoryItf_DeriveApplicationPath(TZXPI_Context* context, const
       searching = false;
     }
     else if (boost::filesystem::is_directory(curSearchPath)) {
-#if MACINTOSH
       if (ZXPI_AdobeRepositoryItf_IsAppPath(context, curSearchPath)) {
         searching = false;
         found = true;
-        applicationPath = curSearchPath.native();
+        applicationPath = curSearchPath.string();
       }
       else {
         boost::filesystem::directory_iterator end_itr; // default construction yields past-the-end
         boost::filesystem::directory_iterator itr(curSearchPath);
-        while (itr != end_itr) {
-          if (boost::filesystem::is_directory(itr->status())) {
-            if (ZXPI_AdobeRepositoryItf_IsAppPath(context, itr->path())) {
-              searching = false;
-              found = true;
-              applicationPath = itr->path().string();
-            }
+        while (itr != end_itr && searching) {
+			    if (ZXPI_AdobeRepositoryItf_IsAppPath(context, itr->path())) {
+            searching = false;
+            found = true;
+            applicationPath = itr->path().string();
           }
           ++itr;
         }
       }
-#endif
     }
     if (searching) {
       if (! curSearchPath.has_parent_path()) {
@@ -92,13 +123,14 @@ bool ZXPI_AdobeRepositoryItf_DeriveApplicationPath(TZXPI_Context* context, const
   return found;
 }
 
+#if MACINTOSH      
 bool ZXPI_AdobeRepositoryItf_DerivePhotoshopPath(TZXPI_Context* context, const std::string& pathString, std::string& applicationPath) {
   
   bool searching = true;
   bool found = false;
   
   //
-  // For Photoshop CC 2015 (and above?), the path to the Photoshop app resides in a preferences file
+  // For Photoshop CC 2015 (and above?) on Mac, the path to the Photoshop app resides in a preferences file
   // ~/Library/Preferences/Adobe Photoshop CC 2015 Paths
   //
   
@@ -109,23 +141,9 @@ bool ZXPI_AdobeRepositoryItf_DerivePhotoshopPath(TZXPI_Context* context, const s
     const std::string pathStringComponent(curSearchPath.filename().string());
     if (boost::contains(pathStringComponent, "Photoshop") && boost::contains(pathStringComponent, "CC")) {
       searching = false;
-#if MACINTOSH      
       passwd* pw = getpwuid(getuid());
       std::string homeFolder(pw->pw_dir);
       const std::string prefsFile(homeFolder + "/Library/Preferences/" + pathStringComponent + " Paths");
-#endif      
-#if WINDOWS
-    //FOLDERID_ProgramFilesCommonX86
-    WCHAR* roamingAppData = NULL;
-    std::wstring photoshopPathPrefsPath;
-    if (SUCCEEDED(SHGetKnownFolderPath(FOLDERID_RoamingAppData, 0, NULL, &roamingAppData))) {
-      photoshopPathPrefsPath = roamingAppData;
-      CoTaskMemFree((LPVOID) roamingAppData);
-      roamingAppData = NULL;
-      const std::wstring wAppName(appName.begin(), appName.end());
-      photoshopPathPrefsPath.append(wAppName + L" Paths");
-    }
-#endif
       std::ifstream prefsFileStream(prefsFile.c_str(), std::ios::in | std::ios::binary);
       if (prefsFileStream) {
         std::ostringstream contents;
@@ -152,9 +170,10 @@ bool ZXPI_AdobeRepositoryItf_DerivePhotoshopPath(TZXPI_Context* context, const s
       }
     }
   }
-  
+
   return found;
 }
+#endif
 
 void ZXPI_AdobeRepositoryItf_DoCommand(TZXPI_Context* context) {
 
@@ -319,11 +338,13 @@ void ZXPI_AdobeRepositoryItf_WhereIs(TZXPI_Context* context) {
           std::string pathString((char*) cPath);
           std::string applicationPath;
           ZXPI_AdobeRepositoryItf_DeriveApplicationPath(context, pathString, applicationPath);
-          
+
+#if MACINTOSH
           if (applicationPath.empty() && boost::starts_with(context->appIdentifier, "pho"/*toshop*/)) {
             ZXPI_AdobeRepositoryItf_DerivePhotoshopPath(context, pathString, applicationPath);
           }
-          
+#endif
+
           if (! applicationPath.empty()) {
             printf("%s\n",applicationPath.c_str());
           }
