@@ -48,7 +48,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		01407F961B54981C0092EA10 /* ReadMe.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ReadMe.txt; sourceTree = "<group>"; };
+		01407F961B54981C0092EA10 /* ReadMe.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = ReadMe.md; sourceTree = "<group>"; };
 		01407F971B54993A0092EA10 /* libboost_filesystem.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libboost_filesystem.a; path = "boost/bin.v2/libs/filesystem/build/darwin-4.2.1/release/address-model-32_64/link-static/threading-multi/libboost_filesystem.a"; sourceTree = "<group>"; };
 		01407F9C1B5499940092EA10 /* libboost_system.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libboost_system.a; path = "boost/bin.v2/libs/system/build/darwin-4.2.1/release/address-model-32_64/link-static/threading-multi/libboost_system.a"; sourceTree = "<group>"; };
 		017547CB1B53A9F90081FB20 /* ZXPI_AdobeRepositoryItf.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ZXPI_AdobeRepositoryItf.cpp; sourceTree = "<group>"; };
@@ -84,7 +84,7 @@
 		01CD9F531B5324420041F7A8 /* xmltok.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = xmltok.c; path = expat/lib/xmltok.c; sourceTree = "<group>"; };
 		01CD9F541B5324420041F7A8 /* xmltok.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = xmltok.h; path = expat/lib/xmltok.h; sourceTree = "<group>"; };
 		01CD9F5A1B5325680041F7A8 /* ZXPI_ConfigExpat.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZXPI_ConfigExpat.h; sourceTree = "<group>"; };
-		01CD9F5B1B5325A90041F7A8 /* ZXPI_PrecompiledHeaders.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZXPI_PrecompiledHeaders.h; sourceTree = "<group>"; };
+		01CD9F5B1B5325A90041F7A8 /* ZXPI_Prefix.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZXPI_Prefix.h; sourceTree = "<group>"; };
 		01CD9F5C1B532C190041F7A8 /* ZXPI_RestoreCompilerWarnings.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZXPI_RestoreCompilerWarnings.h; sourceTree = "<group>"; };
 		01CD9F5E1B53320C0041F7A8 /* adler32.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = adler32.c; path = zlib/adler32.c; sourceTree = "<group>"; };
 		01CD9F5F1B53320C0041F7A8 /* crc32.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = crc32.c; path = zlib/crc32.c; sourceTree = "<group>"; };
@@ -171,12 +171,13 @@
 				01CD9F2F1B53091D0041F7A8 /* ZXPI_Logging.h */,
 				01CD9F2E1B53091D0041F7A8 /* ZXPI_Logging.cpp */,
 				01CD9F201B5300AD0041F7A8 /* ZXPI_Main.cpp */,
-				01CD9F5B1B5325A90041F7A8 /* ZXPI_PrecompiledHeaders.h */,
+				01CD9F5B1B5325A90041F7A8 /* ZXPI_Prefix.h */,
 				01CD9F5C1B532C190041F7A8 /* ZXPI_RestoreCompilerWarnings.h */,
-				01407F961B54981C0092EA10 /* ReadMe.txt */,
+				01407F961B54981C0092EA10 /* ReadMe.md */,
 			);
+			name = ZXPInstaller;
 			path = ../ZXPInstaller;
-			sourceTree = "<group>";
+			sourceTree = SOURCE_ROOT;
 		};
 		01CD9F351B5323CA0041F7A8 /* sqlite */ = {
 			isa = PBXGroup;
@@ -279,7 +280,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 01CD9F181B5300AD0041F7A8 /* Build configuration list for PBXProject "AdobePoker" */;
+			buildConfigurationList = 01CD9F181B5300AD0041F7A8 /* Build configuration list for PBXProject "AdobePokerXC6" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -430,6 +431,7 @@
 		01CD9F251B5300AD0041F7A8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				GCC_PREFIX_HEADER = ../ZXPInstaller/ZXPI_Prefix.h;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/../ZXPInstaller/boost/bin.v2/libs/filesystem/build/darwin-4.2.1/release/address-model-32_64/link-static/threading-multi",
@@ -443,6 +445,7 @@
 		01CD9F261B5300AD0041F7A8 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				GCC_PREFIX_HEADER = ../ZXPInstaller/ZXPI_Prefix.h;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/../ZXPInstaller/boost/bin.v2/libs/filesystem/build/darwin-4.2.1/release/address-model-32_64/link-static/threading-multi",
@@ -456,7 +459,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		01CD9F181B5300AD0041F7A8 /* Build configuration list for PBXProject "AdobePoker" */ = {
+		01CD9F181B5300AD0041F7A8 /* Build configuration list for PBXProject "AdobePokerXC6" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				01CD9F221B5300AD0041F7A8 /* Debug */,
