@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>E46F8317-8F82-4293-87B3-E2E6ECA58296</string>
+	<key>IDESourceControlProjectName</key>
+	<string>AdobePokerXC6</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>581490687D937AB1790EE7004A3AD8819DAFD300</key>
+		<string>ssh://rorohiko.glueco.de/home/git/ZXPInstaller.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Mac/AdobePokerXC6.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>581490687D937AB1790EE7004A3AD8819DAFD300</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>ssh://rorohiko.glueco.de/home/git/ZXPInstaller.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>581490687D937AB1790EE7004A3AD8819DAFD300</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>581490687D937AB1790EE7004A3AD8819DAFD300</string>
+			<key>IDESourceControlWCCName</key>
+			<string>ZXPInstaller</string>
+		</dict>
+	</array>
+</dict>
+</plist>

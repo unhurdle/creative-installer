@@ -1,0 +1,13 @@
+AdobePoker.xcodeproj/xcuserdata
+build
+ZXPInstaller/zlib
+ZXPInstaller/expat
+ZXPInstaller/boost
+ZXPInstaller/sqlite
+AdobePoker.xcodeproj/project.xcworkspace
+AdobePoker/Debug/
+*.sdf
+AdobePoker/ipch/
+Windows/Release/
+Windows/Debug/
+*.opensdf

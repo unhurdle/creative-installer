@@ -1,0 +1,227 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Source Files\zlib">
+      <UniqueIdentifier>{6ae19933-bd03-4776-b7ae-10a606f58aea}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\sqlite">
+      <UniqueIdentifier>{bfe32ce5-93fe-410a-8c46-0a55e31edbe9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\boost">
+      <UniqueIdentifier>{ecb471c2-4ffe-4b8a-b560-9048ce038292}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\expat">
+      <UniqueIdentifier>{292a3cf6-3011-40dc-bb9e-706b07566cd8}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\ZXPInstaller\ZXPI_AdobeRepositoryItf.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ZXPInstaller\ZXPI_ArgumentParser.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ZXPInstaller\ZXPI_Logging.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ZXPInstaller\ZXPI_Main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ZXPInstaller\zlib\adler32.c">
+      <Filter>Source Files\zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ZXPInstaller\zlib\compress.c">
+      <Filter>Source Files\zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ZXPInstaller\zlib\crc32.c">
+      <Filter>Source Files\zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ZXPInstaller\zlib\deflate.c">
+      <Filter>Source Files\zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ZXPInstaller\zlib\gzclose.c">
+      <Filter>Source Files\zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ZXPInstaller\zlib\gzlib.c">
+      <Filter>Source Files\zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ZXPInstaller\zlib\gzread.c">
+      <Filter>Source Files\zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ZXPInstaller\zlib\gzwrite.c">
+      <Filter>Source Files\zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ZXPInstaller\zlib\infback.c">
+      <Filter>Source Files\zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ZXPInstaller\zlib\inffast.c">
+      <Filter>Source Files\zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ZXPInstaller\zlib\inflate.c">
+      <Filter>Source Files\zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ZXPInstaller\zlib\inftrees.c">
+      <Filter>Source Files\zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ZXPInstaller\zlib\trees.c">
+      <Filter>Source Files\zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ZXPInstaller\zlib\zutil.c">
+      <Filter>Source Files\zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ZXPInstaller\sqlite\sqlite3.c">
+      <Filter>Source Files\sqlite</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ZXPInstaller\expat\lib\xmlparse.c">
+      <Filter>Source Files\expat</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ZXPInstaller\expat\lib\xmlrole.c">
+      <Filter>Source Files\expat</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ZXPInstaller\expat\lib\xmltok.c">
+      <Filter>Source Files\expat</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ZXPInstaller\expat\lib\xmltok_impl.c">
+      <Filter>Source Files\expat</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ZXPInstaller\expat\lib\xmltok_ns.c">
+      <Filter>Source Files\expat</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\ZXPInstaller\zlib\crc32.h">
+      <Filter>Source Files\zlib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ZXPInstaller\zlib\deflate.h">
+      <Filter>Source Files\zlib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ZXPInstaller\zlib\gzguts.h">
+      <Filter>Source Files\zlib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ZXPInstaller\zlib\inffast.h">
+      <Filter>Source Files\zlib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ZXPInstaller\zlib\inffixed.h">
+      <Filter>Source Files\zlib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ZXPInstaller\zlib\inflate.h">
+      <Filter>Source Files\zlib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ZXPInstaller\zlib\inftrees.h">
+      <Filter>Source Files\zlib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ZXPInstaller\zlib\trees.h">
+      <Filter>Source Files\zlib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ZXPInstaller\zlib\zconf.h">
+      <Filter>Source Files\zlib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ZXPInstaller\zlib\zlib.h">
+      <Filter>Source Files\zlib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ZXPInstaller\zlib\zutil.h">
+      <Filter>Source Files\zlib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ZXPInstaller\sqlite\sqlite3.h">
+      <Filter>Source Files\sqlite</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ZXPInstaller\expat\lib\ascii.h">
+      <Filter>Source Files\expat</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ZXPInstaller\expat\lib\asciitab.h">
+      <Filter>Source Files\expat</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ZXPInstaller\expat\lib\expat.h">
+      <Filter>Source Files\expat</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ZXPInstaller\expat\lib\expat_external.h">
+      <Filter>Source Files\expat</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ZXPInstaller\expat\lib\iasciitab.h">
+      <Filter>Source Files\expat</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ZXPInstaller\expat\lib\internal.h">
+      <Filter>Source Files\expat</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ZXPInstaller\expat\lib\latin1tab.h">
+      <Filter>Source Files\expat</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ZXPInstaller\expat\lib\nametab.h">
+      <Filter>Source Files\expat</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ZXPInstaller\expat\lib\utf8tab.h">
+      <Filter>Source Files\expat</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ZXPInstaller\expat\lib\winconfig.h">
+      <Filter>Source Files\expat</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ZXPInstaller\expat\lib\xmlrole.h">
+      <Filter>Source Files\expat</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ZXPInstaller\expat\lib\xmltok.h">
+      <Filter>Source Files\expat</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ZXPInstaller\expat\lib\xmltok_impl.h">
+      <Filter>Source Files\expat</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ZXPInstaller\ZXPI_AdobeRepositoryItf.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ZXPInstaller\ZXPI_ArgumentParser.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ZXPInstaller\ZXPI_ConfigConstants.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ZXPInstaller\ZXPI_ConfigZlib.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ZXPInstaller\ZXPI_ConfigExpat.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ZXPInstaller\ZXPI_Constants.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ZXPInstaller\ZXPI_Context.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ZXPInstaller\ZXPI_Logging.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ZXPInstaller\ZXPI_Prefix.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ZXPInstaller\ZXPI_RestoreCompilerWarnings.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="..\ZXPInstaller\ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="..\ZXPInstaller\boost\stage\lib\libboost_filesystem-vc120-mt-1_58.lib">
+      <Filter>Source Files\boost</Filter>
+    </Library>
+    <Library Include="..\ZXPInstaller\boost\stage\lib\libboost_system-vc120-mt-1_58.lib">
+      <Filter>Source Files\boost</Filter>
+    </Library>
+    <Library Include="..\ZXPInstaller\boost\stage\lib\libboost_system-vc120-mt-gd-1_58.lib">
+      <Filter>Source Files\boost</Filter>
+    </Library>
+    <Library Include="..\ZXPInstaller\boost\stage\lib\libboost_filesystem-vc120-mt-gd-1_58.lib">
+      <Filter>Source Files\boost</Filter>
+    </Library>
+  </ItemGroup>
+</Project>
